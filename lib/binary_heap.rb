@@ -25,20 +25,18 @@ class BinaryHeap
     popped = peak
     swap(0, heap_array.length - 1)
     heap_array.pop
-    bubble_up
+    bubble_down(0)
     popped
   end
 
   private
 
   def bubble_up
-    position = heap_array.length - 1
-    parent_position = parent(position)
-    while position > 0 && heap_array[position] > heap_array[parent_position]
-      swap(position, parent_position)
-      position = parent_position
-      parent_position = parent(position)
-    end
+    raise StandardError.new("Method missing: bubble_up")
+  end
+
+  def is_leaf(position)
+    heap_array.length < left_child(position)
   end
 
   def swap(i, j)
