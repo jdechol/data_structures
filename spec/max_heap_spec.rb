@@ -1,6 +1,6 @@
-require 'binary_heap'
+require 'max_heap'
 
-RSpec.describe BinaryHeap do
+RSpec.describe MaxHeap do
   describe "#pop" do
     it "can remove elements until empty" do
       heap = described_class.new([3,10,5,-3])
