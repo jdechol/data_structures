@@ -1,5 +1,9 @@
 class BinaryHeap
+  def initialize(data=[])
+    @data = data
+  end
+
   def empty?
-    true
+    @data.empty?
   end
 end
