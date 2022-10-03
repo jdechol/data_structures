@@ -1,11 +1,15 @@
 require 'binary_heap'
 
 RSpec.describe BinaryHeap do
-  describe "#find_max" do
+  describe "#peak" do
 		it "returns nil when the heap is empty" do
       expect(described_class.new).to be_empty
-			expect(subject.find_max).to eq nil
-		end
+			expect(subject.peak).to eq nil
+    end
+
+    it "returns the element when there is only one element" do
+      expect(described_class.new([1]).peak).to eq 1
+    end
   end
 
   describe "#empty" do

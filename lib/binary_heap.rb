@@ -6,4 +6,8 @@ class BinaryHeap
   def empty?
     @data.empty?
   end
+
+  def peak
+    @data.first
+  end
 end
