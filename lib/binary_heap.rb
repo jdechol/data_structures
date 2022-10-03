@@ -3,10 +3,6 @@ class BinaryHeap
 
   def initialize(data=[])
     @heap_array = []
-    build_heap(data)
-  end
-
-  def build_heap(data)
     data.each { |element| add(element) }
   end
 
