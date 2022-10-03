@@ -19,6 +19,14 @@ class BinaryHeap
     heap_array.first
   end
 
+  def pop
+    popped = peak
+    swap(0, heap_array.length - 1)
+    heap_array.pop
+    bubble_up
+    popped
+  end
+
   private
 
   def bubble_up

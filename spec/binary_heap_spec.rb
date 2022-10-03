@@ -1,6 +1,17 @@
 require 'binary_heap'
 
 RSpec.describe BinaryHeap do
+  describe "#pop" do
+    it "can remove elements until empty" do
+      heap = described_class.new([3,10,5,-3])
+      expect(heap.pop).to eq 10
+      expect(heap.pop).to eq 5
+      expect(heap.pop).to eq 3
+      expect(heap.pop).to eq -3
+      expect { heap.pop }.to raise_error
+    end
+  end
+
   describe "#peak" do
 		it "returns nil when the heap is empty" do
       expect(described_class.new).to be_empty
