@@ -1,19 +1,19 @@
 class BinaryHeap
-  attr_reader :data
+  attr_reader :heap_array
 
-  def initialize(data=[])
-    @data = data
+  def initialize(heap_array=[])
+    @heap_array = heap_array
   end
 
   def add(element)
-    @data.push(element)
+    @heap_array.push(element)
   end
 
   def empty?
-    @data.empty?
+    @heap_array.empty?
   end
 
   def peak
-    @data.first
+    @heap_array.first
   end
 end
