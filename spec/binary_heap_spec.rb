@@ -8,7 +8,7 @@ RSpec.describe BinaryHeap do
       expect(heap.pop).to eq 5
       expect(heap.pop).to eq 3
       expect(heap.pop).to eq -3
-      expect { heap.pop }.to raise_error
+      expect { heap.pop }.to raise_error(StandardError, "Heap is empty!")
     end
   end
 

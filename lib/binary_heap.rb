@@ -20,6 +20,8 @@ class BinaryHeap
   end
 
   def pop
+    raise StandardError.new("Heap is empty!") if empty?
+
     popped = peak
     swap(0, heap_array.length - 1)
     heap_array.pop
