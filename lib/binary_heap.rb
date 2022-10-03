@@ -33,9 +33,11 @@ class BinaryHeap
 
   def bubble_up
     position = heap_array.length - 1
-    while position > 0 && heap_array[position] > heap_array[parent(position)]
-      swap(position, parent(position))
-      position = parent(position)
+    parent_position = parent(position)
+    while position > 0 && heap_array[position] > heap_array[parent_position]
+      swap(position, parent_position)
+      position = parent_position
+      parent_position = parent(position)
     end
   end
 
