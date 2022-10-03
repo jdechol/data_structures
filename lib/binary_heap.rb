@@ -11,14 +11,14 @@ class BinaryHeap
   end
 
   def add(element)
-    @heap_array.push(element)
+    heap_array.push(element)
   end
 
   def empty?
-    @heap_array.empty?
+    heap_array.empty?
   end
 
   def peak
-    @heap_array.first
+    heap_array.first
   end
 end
