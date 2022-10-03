@@ -1,6 +1,16 @@
 require 'max_heap'
 
 RSpec.describe MaxHeap do
+  it "can handle a large data set" do
+    data = []
+    1000.times { data.push(rand(1000)) }
+    heap = described_class.new(data)
+    data.sort!.reverse!
+    1000.times do |index|
+      expect(heap.pop).to eq data[index]
+    end
+  end
+
   describe "#pop" do
     it "can remove elements until empty" do
       heap = described_class.new([3,10,5,-3])
