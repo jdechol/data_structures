@@ -11,6 +11,18 @@ RSpec.describe BinaryHeap do
       expect(described_class.new([1]).peak).to eq 1
     end
 
+    it "returns the largest element when adding a larger element" do
+      heap = described_class.new([5])
+      heap.add(7)
+      expect(heap.peak).to eq 7
+    end
+
+    it "returns the largest element when adding a smaller element" do
+      heap = described_class.new([5])
+      heap.add(3)
+      expect(heap.peak).to eq 5
+    end
+
     it "returns the max element when multiple elements are in the heap" do
       data = [5,8,16,1,3]
       expect(described_class.new(data).peak).to eq data.max
