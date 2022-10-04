@@ -1,6 +1,6 @@
 require 'max_heap'
 
-RSpec.describe MaxHeap do
+describe MaxHeap do
   it "can handle a large data set" do
     data = []
     1000.times { data.push(rand(1000)) }
