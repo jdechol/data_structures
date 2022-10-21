@@ -1,6 +1,6 @@
-require 'min_heap'
+require 'heaps/min_heap'
 
-describe MinHeap do
+describe Heaps::MinHeap do
   it "can handle a large data set" do
     data = []
     1000.times { data.push(rand(1000)) }
