@@ -1,4 +1,4 @@
-require 'binary_heap'
+require_relative 'binary_heap'
 
 class MinHeap < BinaryHeap
   def compare(a, b)

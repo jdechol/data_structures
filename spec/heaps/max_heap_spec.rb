@@ -1,4 +1,4 @@
-require 'max_heap'
+require 'heaps/max_heap'
 
 describe MaxHeap do
   it "can handle a large data set" do
