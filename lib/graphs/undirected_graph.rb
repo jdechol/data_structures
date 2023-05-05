@@ -11,6 +11,10 @@ module Graphs
       grid[v1][v2] = weight
     end
 
+    def remove_edge(v1, v2)
+      add_edge(v1, v2, 0)
+    end
+
     def edge_weight(v1, v2)
       grid[v1][v2]
     end
