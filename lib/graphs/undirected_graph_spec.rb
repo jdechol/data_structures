@@ -17,8 +17,8 @@ describe Graphs::UndirectedGraph do
     expect(subject.edge_weight(2, 4)).to eq(5)
   end
 
-  it "initializes non_edges with -1" do
-    expect(subject.edge_weight(5, 4)).to eq -1
+  it "initializes non_edges with nil" do
+    expect(subject.edge_weight(5, 4)).to eq nil
   end
 
   describe "#add_edge" do
@@ -36,7 +36,7 @@ describe Graphs::UndirectedGraph do
     it "removes an edge" do
       expect(subject.edge_weight(5, 5)).to_not eq 0
       subject.remove_edge(5, 5)
-      expect(subject.edge_weight(5, 5)).to eq -1
+      expect(subject.edge_weight(5, 5)).to eq nil
     end
 
     it "raises an error when a vertex is out of bounds" do

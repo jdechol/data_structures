@@ -2,7 +2,7 @@ module Graphs
   class UndirectedGraph
     def initialize(size, edges)
       @size = size
-      @grid = Array.new(size) { Array.new(size, -1) }
+      @grid = Array.new(size) { Array.new(size) }
       edges.each { |tuple| add_edge(*tuple) }
     end
 
@@ -12,7 +12,7 @@ module Graphs
     end
 
     def remove_edge(v1, v2)
-      add_edge(v1, v2, -1)
+      add_edge(v1, v2, nil)
     end
 
     def edge_weight(v1, v2)
