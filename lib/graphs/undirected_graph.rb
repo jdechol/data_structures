@@ -7,13 +7,5 @@ module Graphs
       grid[from][to] = weight
       grid[to][from] = weight
     end
-
-    def remove_edge(from:, to:)
-      add_edge(from: from, to: to, weight: nil)
-    end
-
-    def edge_weight(from:, to:)
-      grid[from][to]
-    end
   end
 end

@@ -11,11 +11,11 @@ module Graphs
     end
 
     def remove_edge(from:, to:)
-      raise NotImplementedError.new("Implement remove_edge in your subclass!")
+      add_edge(from: from, to: to, weight: nil)
     end
 
     def edge_weight(from:, to:)
-      raise NotImplementedError.new("Implement edge_weight in your subclass!")
+      grid[from][to]
     end
 
     private
