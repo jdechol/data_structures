@@ -6,16 +6,20 @@ module Graphs
       edges.each { |tuple| add_edge(*tuple) }
     end
 
-    def add_edge(v1, v2, value)
-      raise ArgumentError.new("vertex out of bounds!") if v1 >= size || v2 >= size
-      grid[v1][v2] = value
+    def add_edge(v1, v2, weight)
+      raise ArgumentError.new("vertex out of bounds!") if out_of_bounds(v1) || out_of_bounds(v2)
+      grid[v1][v2] = weight
     end
 
-    def weight(v1, v2)
+    def edge_weight(v1, v2)
       grid[v1][v2]
     end
 
     private
+
+    def out_of_bounds(vertex)
+      vertex >= size
+    end
 
     attr_reader :size, :grid
   end

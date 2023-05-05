@@ -14,7 +14,7 @@ describe Graphs::UndirectedGraph do
   subject { described_class.new(size, edges) }
 
   it "builds a graph" do
-    expect(subject.weight(2, 4)).to eq(5)
+    expect(subject.edge_weight(2, 4)).to eq(5)
   end
 
   describe "#add_edge" do
