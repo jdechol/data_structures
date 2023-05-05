@@ -3,20 +3,20 @@ module Graphs
     def initialize(size, edges)
       @size = size
       @grid = Array.new(size) { Array.new(size) }
-      edges.each { |tuple| add_edge(*tuple) }
+      edges.each { |edge| add_edge(edge.left, edge.right, edge.weight) }
     end
 
-    def add_edge(v1, v2, weight)
-      raise ArgumentError.new("vertex out of bounds!") if out_of_bounds(v1) || out_of_bounds(v2)
-      grid[v1][v2] = weight
+    def add_edge(left, right, weight)
+      raise ArgumentError.new("vertex out of bounds!") if out_of_bounds(left) || out_of_bounds(right)
+      grid[left][right] = weight
     end
 
-    def remove_edge(v1, v2)
-      add_edge(v1, v2, nil)
+    def remove_edge(left, right)
+      add_edge(left, right, nil)
     end
 
-    def edge_weight(v1, v2)
-      grid[v1][v2]
+    def edge_weight(left, right)
+      grid[left][right]
     end
 
     private

@@ -1,13 +1,14 @@
 require 'graphs/undirected_graph'
+require 'ostruct'
 
 describe Graphs::UndirectedGraph do
   let(:size) { 6 }
   let(:edges) {
     [
-      [1, 3, 7],
-      [2, 4, 5],
-      [1, 2, 4],
-      [5, 5, 20]
+      OpenStruct.new(left: 1, right: 3, weight: 7),
+      OpenStruct.new(left: 2, right: 4, weight: 5),
+      OpenStruct.new(left: 1, right: 2, weight: 4),
+      OpenStruct.new(left: 5, right: 5, weight: 20),
     ]
   }
 
