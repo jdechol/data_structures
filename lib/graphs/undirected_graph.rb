@@ -9,6 +9,7 @@ module Graphs
     def add_edge(left, right, weight)
       raise ArgumentError.new("vertex out of bounds!") if out_of_bounds(left) || out_of_bounds(right)
       grid[left][right] = weight
+      grid[right][left] = weight
     end
 
     def remove_edge(left, right)

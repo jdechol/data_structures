@@ -18,8 +18,12 @@ describe Graphs::UndirectedGraph do
     OpenStruct.new(left: left, right: right, weight: weight)
   end
 
-  it "builds a graph" do
+  it "builds an undirected graph" do
     expect(subject.edge_weight(2, 4)).to eq(5)
+    edges.each do |edge|
+      expect(subject.edge_weight(edge.left, edge.right)).to eq edge.weight
+      expect(subject.edge_weight(edge.right, edge.left)).to eq edge.weight
+    end
   end
 
   it "initializes non_edges with nil" do
