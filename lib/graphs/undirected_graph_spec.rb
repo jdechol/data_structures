@@ -5,14 +5,18 @@ describe Graphs::UndirectedGraph do
   let(:size) { 6 }
   let(:edges) {
     [
-      OpenStruct.new(left: 1, right: 3, weight: 7),
-      OpenStruct.new(left: 2, right: 4, weight: 5),
-      OpenStruct.new(left: 1, right: 2, weight: 4),
-      OpenStruct.new(left: 5, right: 5, weight: 20),
+      build_edge(1, 3, 7),
+      build_edge(2, 4, 5),
+      build_edge(1, 2, 4),
+      build_edge(5, 5, 20),
     ]
   }
 
   subject { described_class.new(size, edges) }
+
+  def build_edge(left, right, weight)
+    OpenStruct.new(left: left, right: right, weight: weight)
+  end
 
   it "builds a graph" do
     expect(subject.edge_weight(2, 4)).to eq(5)
