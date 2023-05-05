@@ -5,7 +5,6 @@ module Graphs
     def add_edge(from:, to:, weight:)
       raise ArgumentError.new("vertex out of bounds!") if out_of_bounds(from) || out_of_bounds(to)
       grid[from][to] = weight
-      grid[to][from] = weight
     end
 
     def remove_edge(from:, to:)
