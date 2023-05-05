@@ -21,8 +21,10 @@ module Graphs
 
       private
 
-      def out_of_bounds(vertex)
-        vertex >= size
+      def verify_bounds(*vertices)
+        vertices.each do |vertex|
+          raise ArgumentError.new("vertex out of bounds!") if vertex >= size
+        end
       end
 
       attr_reader :size, :grid
