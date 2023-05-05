@@ -7,7 +7,7 @@ module Graphs
     end
 
     def add_edge(v1, v2, value)
-      raise ArgumentError("vertex out of bounds!") if v1 > size || v2 > size
+      raise ArgumentError.new("vertex out of bounds!") if v1 >= size || v2 >= size
       grid[v1][v2] = value
     end
 

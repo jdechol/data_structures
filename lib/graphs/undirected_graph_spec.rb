@@ -16,4 +16,9 @@ describe Graphs::UndirectedGraph do
   it "builds a graph" do
     expect(subject.weight(2, 4)).to eq(5)
   end
+
+  it "raises an error when a vertex is out of bounds" do
+    edges[0][0] = 6
+    expect { subject }.to raise_error(ArgumentError)
+  end
 end
