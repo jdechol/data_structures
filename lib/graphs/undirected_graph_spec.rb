@@ -17,8 +17,9 @@ describe Graphs::UndirectedGraph do
     expect(subject.weight(2, 4)).to eq(5)
   end
 
-  it "raises an error when a vertex is out of bounds" do
-    edges[0][0] = 6
-    expect { subject }.to raise_error(ArgumentError)
+  describe "#add_edge" do
+    it "raises an error when a vertex is out of bounds" do
+      expect { subject.add_edge(size, 1, 1) }.to raise_error(ArgumentError)
+    end
   end
 end
