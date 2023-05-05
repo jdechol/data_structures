@@ -1,6 +1,6 @@
-require 'graphs/undirected_graph'
+require 'graphs/adjacency_matrix/directed_graph'
 
-describe Graphs::UndirectedGraph do
+describe Graphs::AdjacencyMatrix::DirectedGraph do
   let(:size) { 6 }
   let(:edges) {
     [
@@ -20,8 +20,10 @@ describe Graphs::UndirectedGraph do
   it "builds an undirected graph" do
     edges.each do |edge|
       expect(subject.edge_weight(from: edge[:from], to: edge[:to])).to eq edge[:weight]
-      expect(subject.edge_weight(to: edge[:from], from: edge[:to])).to eq edge[:weight]
     end
+
+    subject.add_edge(from: 0, to: 1, weight: 20)
+    expect(subject.edge_weight(from: 1, to: 0)).to_not eq 20
   end
 
   it "initializes non_edges with nil" do
