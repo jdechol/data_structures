@@ -3,7 +3,7 @@ module Graphs
     def initialize(size, edges)
       @size = size
       @grid = Array.new(size) { Array.new(size) }
-      edges.each { |edge| add_edge(from: edge.left, to: edge.right, weight: edge.weight) }
+      edges.each { |edge| add_edge(**edge) }
     end
 
     def add_edge(from:, to:, weight:)

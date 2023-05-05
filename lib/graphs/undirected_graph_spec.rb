@@ -1,5 +1,4 @@
 require 'graphs/undirected_graph'
-require 'ostruct'
 
 describe Graphs::UndirectedGraph do
   let(:size) { 6 }
@@ -14,14 +13,14 @@ describe Graphs::UndirectedGraph do
 
   subject { described_class.new(size, edges) }
 
-  def build_edge(left, right, weight)
-    OpenStruct.new(left: left, right: right, weight: weight)
+  def build_edge(from, to, weight)
+    { from: from, to: to, weight: weight }
   end
 
   it "builds an undirected graph" do
     edges.each do |edge|
-      expect(subject.edge_weight(from: edge.left, to: edge.right)).to eq edge.weight
-      expect(subject.edge_weight(from: edge.right, to: edge.left)).to eq edge.weight
+      expect(subject.edge_weight(from: edge[:from], to: edge[:to])).to eq edge[:weight]
+      expect(subject.edge_weight(to: edge[:from], from: edge[:to])).to eq edge[:weight]
     end
   end
 
