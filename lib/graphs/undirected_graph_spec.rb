@@ -34,5 +34,9 @@ describe Graphs::UndirectedGraph do
       subject.remove_edge(5, 5)
       expect(subject.edge_weight(5, 5)).to eq 0
     end
+
+    it "raises an error when a vertex is out of bounds" do
+      expect { subject.remove_edge(size, 1) }.to raise_error(ArgumentError)
+    end
   end
 end
